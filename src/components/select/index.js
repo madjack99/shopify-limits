@@ -1,9 +1,14 @@
 import React from 'react';
 import { limitRuleTitles } from '../materilas';
 
-const Select = ({ entity, idx }) => {
+const Select = ({ entity, ruleIdx, setLimitRules }) => {
   const handleSelect = (e) => {
-    console.log(e.target.value);
+    setLimitRules((rulesList) => {
+      return rulesList.map((rule, mapIdx) => {
+        if (ruleIdx !== mapIdx) return rule;
+        return { ...rule, entity: e.target.value };
+      });
+    });
   };
 
   return (

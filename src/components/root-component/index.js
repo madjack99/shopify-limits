@@ -26,7 +26,7 @@ const RootComponent = () => {
       <div>Header text</div>
       <button onClick={handleAddLimit}>Add limit</button>
       {isLoading && <div>Loading</div>}
-      <RulesList limitRules={limitRules} />
+      <RulesList limitRules={limitRules} setLimitRules={setLimitRules} />
     </div>
   );
 };
