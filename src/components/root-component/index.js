@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { apiFetchLimits } from '../../api';
 import RulesList from '../rulesList';
-
-const defaultLimit = {
-  entity: 'items_in_cart',
-  condition: null,
-  value: [],
-};
+import { defaultLimit } from '../materilas';
 
 const RootComponent = () => {
   const [limitRules, setLimitRules] = useState([]);
