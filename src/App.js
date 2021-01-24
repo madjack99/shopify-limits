@@ -1,7 +1,8 @@
 import './App.css';
+import RootComponent from './components/root-component';
 
 function App() {
-  return <div className='App'>test</div>;
+  return <RootComponent />;
 }
 
 export default App;
