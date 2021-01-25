@@ -2,9 +2,12 @@ import React from 'react';
 
 import CartPriceInput from '../inputs/cart-price';
 import BaseTextInput from '../inputs/base-text';
+import HasOneOfTheProducts from '../inputs/has-products';
 
 const InputMatcher = ({ entity, ruleIdx, setLimitRules }) => {
   switch (entity) {
+    case 'has_one_of_products':
+      return <HasOneOfTheProducts />;
     case 'cart_price':
       return <CartPriceInput ruleIdx={ruleIdx} setLimitRules={setLimitRules} />;
     case 'product_title':
