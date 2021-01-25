@@ -2,6 +2,7 @@ import React from 'react';
 
 import RuleTypeSelect from '../select';
 import InputMatcher from '../input-matcher';
+import DeleteIcon from '../delete-icon';
 
 const RulesList = ({ limitRules, setLimitRules }) => {
   const renderLimitRules = () => {
@@ -19,6 +20,7 @@ const RulesList = ({ limitRules, setLimitRules }) => {
             ruleIdx={idx}
             setLimitRules={setLimitRules}
           />
+          <DeleteIcon ruleIdx={idx} setLimitRules={setLimitRules} />
         </div>
       );
     });
