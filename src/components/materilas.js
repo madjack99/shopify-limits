@@ -34,3 +34,26 @@ export const limitRuleTitles = [
     value: 'collection',
   },
 ];
+
+export const quantityMatchers = [
+  {
+    value: 'greater',
+    label: '>',
+  },
+  {
+    value: 'greater_or_equal',
+    label: '>=',
+  },
+  {
+    value: 'equal',
+    label: '=',
+  },
+  {
+    value: 'less_or_equal',
+    label: '<=',
+  },
+  {
+    value: 'less',
+    label: '<',
+  },
+];
