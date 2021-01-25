@@ -11,7 +11,7 @@ export const limitRuleTitles = [
   },
   {
     label: 'product quantity',
-    value: 'product_picker',
+    value: 'product_quantity',
   },
   {
     label: 'cart price',
