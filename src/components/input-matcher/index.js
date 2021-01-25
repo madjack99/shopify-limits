@@ -8,6 +8,9 @@ const InputMatcher = ({ entity, ruleIdx, setLimitRules }) => {
     case 'cart_price':
       return <CartPriceInput ruleIdx={ruleIdx} setLimitRules={setLimitRules} />;
     case 'product_title':
+    case 'sku':
+    case 'vendor':
+    case 'collection':
       return <BaseTextInput ruleIdx={ruleIdx} setLimitRules={setLimitRules} />;
     default:
       return 'matcher';
