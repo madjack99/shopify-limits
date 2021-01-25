@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Select from '../select';
+import RuleTypeSelect from '../select';
 import InputMatcher from '../input-matcher';
 
 const RulesList = ({ limitRules, setLimitRules }) => {
@@ -9,7 +9,11 @@ const RulesList = ({ limitRules, setLimitRules }) => {
     return limitRules.map(({ entity, value }, idx) => {
       return (
         <div key={idx}>
-          <Select entity={entity} ruleIdx={idx} setLimitRules={setLimitRules} />
+          <RuleTypeSelect
+            entity={entity}
+            ruleIdx={idx}
+            setLimitRules={setLimitRules}
+          />
           <InputMatcher
             entity={entity}
             ruleIdx={idx}

@@ -57,3 +57,9 @@ export const quantityMatchers = [
     label: '<',
   },
 ];
+
+export const stringMatchers = [
+  { value: 'starts_with', label: 'starts with' },
+  { value: 'ends_with', label: 'ends with' },
+  { value: 'contains', label: 'contains' },
+];

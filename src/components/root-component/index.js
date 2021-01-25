@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { apiFetchLimits } from '../../api';
 import RulesList from '../rulesList';
-import { defaultLimit } from '../materilas';
+import { defaultLimit } from '../materials';
 
 const RootComponent = () => {
   const [limitRules, setLimitRules] = useState([]);

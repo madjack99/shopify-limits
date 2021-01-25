@@ -1,7 +1,7 @@
 import React from 'react';
-import { limitRuleTitles } from '../materilas';
+import { limitRuleTitles } from '../materials';
 
-const Select = ({ entity, ruleIdx, setLimitRules }) => {
+const RuleTypeSelect = ({ entity, ruleIdx, setLimitRules }) => {
   const handleSelect = (e) => {
     setLimitRules((rulesList) => {
       return rulesList.map((rule, mapIdx) => {
@@ -24,4 +24,4 @@ const Select = ({ entity, ruleIdx, setLimitRules }) => {
   );
 };
 
-export default Select;
+export default RuleTypeSelect;

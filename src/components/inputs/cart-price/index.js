@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 
 import useNumberInput from '../../hooks/useNumberInput';
 
-import { quantityMatchers } from '../../materilas';
+import { quantityMatchers } from '../../materials';
+import { renderSelectOptions } from '../../utils';
 
 const CartPriceInput = ({ ruleIdx, setLimitRules }) => {
   const [price, handlePriceChange] = useNumberInput();
 
-  const setDefaultKeyValueForRule = (key, defaultValue) => {
+  const setKeyValueForRule = (key, defaultValue) => {
     setLimitRules((rules) => {
       return rules.map((rule, idx) => {
         if (idx !== ruleIdx) return rule;
@@ -21,25 +22,21 @@ const CartPriceInput = ({ ruleIdx, setLimitRules }) => {
     const defaultConditionValue = '>';
     const defaultPrice = 1;
 
-    setDefaultKeyValueForRule('condition', defaultConditionValue);
-    setDefaultKeyValueForRule('value', defaultPrice);
+    setKeyValueForRule('condition', defaultConditionValue);
+    setKeyValueForRule('value', defaultPrice);
   }, []);
-
-  const renderQuantityMatchersOptions = () => {
-    return quantityMatchers.map(({ value, label }, idx) => (
-      <option key={idx} value={value} label={label}></option>
-    ));
-  };
 
   const handleSelect = (e) => {
     const { value } = e.target;
 
-    setDefaultKeyValueForRule('condition', value);
+    setKeyValueForRule('condition', value);
   };
 
   return (
     <div>
-      <select onChange={handleSelect}>{renderQuantityMatchersOptions()}</select>
+      <select onChange={handleSelect}>
+        {renderSelectOptions(quantityMatchers)}
+      </select>
       <input
         type='number'
         value={price}
