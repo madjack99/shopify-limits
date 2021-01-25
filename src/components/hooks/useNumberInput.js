@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { setKeyValueForRule } from '../utils';
+
 const useNumberInput = () => {
   const [number, setNumber] = useState(1);
   const [error, setError] = useState(null);
@@ -14,14 +16,8 @@ const useNumberInput = () => {
       return;
     }
 
+    setKeyValueForRule('value', value, ruleIdx, setLimitRules);
     setNumber(value);
-    setLimitRules((rules) => {
-      return rules.map((rule, idx) => {
-        if (idx !== ruleIdx) return rule;
-        rule.value = value;
-        return rule;
-      });
-    });
   };
 
   return [number, handler, error];

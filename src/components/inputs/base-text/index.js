@@ -2,8 +2,11 @@ import React, { useEffect } from 'react';
 
 import { stringMatchers } from '../../materials';
 import { renderSelectOptions, setKeyValueForRule } from '../../utils';
+import { useTextInput } from '../../hooks/useTextInput';
 
 const BaseTextInput = ({ ruleIdx, setLimitRules }) => {
+  const [text, handleTextChange] = useTextInput();
+
   useEffect(() => {
     const defaultConditionValue = 'starts_with';
     const defaultText = '';
@@ -27,6 +30,11 @@ const BaseTextInput = ({ ruleIdx, setLimitRules }) => {
       <select onChange={handleSelect}>
         {renderSelectOptions(stringMatchers)}
       </select>
+      <input
+        type='text'
+        value={text}
+        onChange={(e) => handleTextChange(e, ruleIdx, setLimitRules)}
+      />
     </div>
   );
 };
