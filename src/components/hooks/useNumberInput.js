@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { setKeyValueForRule } from '../utils';
 
-const useNumberInput = () => {
-  const [number, setNumber] = useState(1);
+const useNumberInput = (initValue) => {
+  const [number, setNumber] = useState(initValue);
   const [error, setError] = useState(null);
 
   const handler = (e, ruleIdx, setLimitRules) => {

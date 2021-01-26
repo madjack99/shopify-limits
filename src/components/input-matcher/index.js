@@ -9,7 +9,14 @@ const InputMatcher = ({ entity, ruleIdx, setLimitRules, condition, value }) => {
     case 'has_one_of_products':
       return <HasOneOfTheProducts />;
     case 'cart_price':
-      return <CartPriceInput ruleIdx={ruleIdx} setLimitRules={setLimitRules} />;
+      return (
+        <CartPriceInput
+          ruleIdx={ruleIdx}
+          setLimitRules={setLimitRules}
+          condition={condition}
+          value={value}
+        />
+      );
     case 'product_title':
     case 'sku':
     case 'vendor':

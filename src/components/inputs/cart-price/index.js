@@ -7,13 +7,13 @@ import { renderSelectOptions, setKeyValueForRule } from '../../utils';
 import './style.css';
 import '../../shared-styles/inputs.css';
 
-const CartPriceInput = ({ ruleIdx, setLimitRules }) => {
-  const [price, handlePriceChange] = useNumberInput();
+const CartPriceInput = ({ ruleIdx, setLimitRules, condition, value }) => {
+  const [price, handlePriceChange] = useNumberInput(value || 1);
+
+  const defaultConditionValue = condition ? condition : '>';
+  const defaultPrice = value ? value : 1;
 
   useEffect(() => {
-    const defaultConditionValue = '>';
-    const defaultPrice = 1;
-
     setKeyValueForRule(
       'condition',
       defaultConditionValue,
@@ -21,7 +21,7 @@ const CartPriceInput = ({ ruleIdx, setLimitRules }) => {
       setLimitRules
     );
     setKeyValueForRule('value', defaultPrice, ruleIdx, setLimitRules);
-  }, [ruleIdx, setLimitRules]);
+  }, [ruleIdx, setLimitRules, defaultConditionValue, defaultPrice]);
 
   const handleSelect = (e) => {
     const { value } = e.target;
@@ -34,6 +34,7 @@ const CartPriceInput = ({ ruleIdx, setLimitRules }) => {
       <select
         onChange={handleSelect}
         className='default_select_input quantity_matcher'
+        value={defaultConditionValue}
       >
         {renderSelectOptions(quantityMatchers)}
       </select>

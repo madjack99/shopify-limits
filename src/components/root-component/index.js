@@ -24,6 +24,9 @@ const RootComponent = () => {
          *  { entity: 'sku', condition: 'ends_with', value: 'some value' }
          * ])
          */
+        setLimitRules([
+          { entity: 'cart_price', condition: 'equal', value: '1999' },
+        ]);
       })
       .finally(() => setIsLoading(false));
   }, []);
