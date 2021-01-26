@@ -9,7 +9,7 @@ import './style.css';
 
 const BaseTextInput = ({ ruleIdx, setLimitRules, condition, value }) => {
   const [text, handleTextChange] = useTextInput(value || '');
-
+  console.log(condition, value);
   const defaultConditionValue = condition ? condition : 'starts_with';
   const defaultText = value ? value : '';
 
@@ -21,7 +21,7 @@ const BaseTextInput = ({ ruleIdx, setLimitRules, condition, value }) => {
       setLimitRules
     );
     setKeyValueForRule('value', defaultText, ruleIdx, setLimitRules);
-  }, [ruleIdx, setLimitRules]);
+  }, [ruleIdx, setLimitRules, defaultConditionValue, defaultText]);
 
   const handleSelect = (e) => {
     const { value } = e.target;

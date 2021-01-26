@@ -10,7 +10,12 @@ const RuleTypeSelect = ({ entity, ruleIdx, setLimitRules }) => {
     setLimitRules((rulesList) => {
       return rulesList.map((rule, mapIdx) => {
         if (ruleIdx !== mapIdx) return rule;
-        return { ...rule, entity: e.target.value };
+        return {
+          ...rule,
+          entity: e.target.value,
+          condition: null,
+          value: null,
+        };
       });
     });
   };

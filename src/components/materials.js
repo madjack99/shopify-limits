@@ -1,7 +1,7 @@
 export const defaultLimit = {
   entity: 'has_one_of_products',
   condition: null,
-  value: [],
+  value: null,
 };
 
 export const limitRuleTitles = [
