@@ -9,7 +9,7 @@ import './style.css';
 const RulesList = ({ limitRules, setLimitRules }) => {
   const renderLimitRules = () => {
     console.log(limitRules);
-    return limitRules.map(({ entity, value }, idx) => {
+    return limitRules.map(({ entity, condition, value }, idx) => {
       return (
         <div key={idx} className='rule_item'>
           <RuleTypeSelect
@@ -21,6 +21,8 @@ const RulesList = ({ limitRules, setLimitRules }) => {
             entity={entity}
             ruleIdx={idx}
             setLimitRules={setLimitRules}
+            condition={condition}
+            value={value}
           />
           <DeleteIcon ruleIdx={idx} setLimitRules={setLimitRules} />
         </div>

@@ -7,13 +7,13 @@ import { useTextInput } from '../../hooks/useTextInput';
 import '../../shared-styles/inputs.css';
 import './style.css';
 
-const BaseTextInput = ({ ruleIdx, setLimitRules }) => {
-  const [text, handleTextChange] = useTextInput();
+const BaseTextInput = ({ ruleIdx, setLimitRules, condition, value }) => {
+  const [text, handleTextChange] = useTextInput(value || '');
+
+  const defaultConditionValue = condition ? condition : 'starts_with';
+  const defaultText = value ? value : '';
 
   useEffect(() => {
-    const defaultConditionValue = 'starts_with';
-    const defaultText = '';
-
     setKeyValueForRule(
       'condition',
       defaultConditionValue,
@@ -33,6 +33,7 @@ const BaseTextInput = ({ ruleIdx, setLimitRules }) => {
       <select
         onChange={handleSelect}
         className='default_select_input string_matcher'
+        value={defaultConditionValue}
       >
         {renderSelectOptions(stringMatchers)}
       </select>

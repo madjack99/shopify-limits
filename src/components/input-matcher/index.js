@@ -4,7 +4,7 @@ import CartPriceInput from '../inputs/cart-price';
 import BaseTextInput from '../inputs/base-text';
 import HasOneOfTheProducts from '../inputs/has-products';
 
-const InputMatcher = ({ entity, ruleIdx, setLimitRules }) => {
+const InputMatcher = ({ entity, ruleIdx, setLimitRules, condition, value }) => {
   switch (entity) {
     case 'has_one_of_products':
       return <HasOneOfTheProducts />;
@@ -14,7 +14,14 @@ const InputMatcher = ({ entity, ruleIdx, setLimitRules }) => {
     case 'sku':
     case 'vendor':
     case 'collection':
-      return <BaseTextInput ruleIdx={ruleIdx} setLimitRules={setLimitRules} />;
+      return (
+        <BaseTextInput
+          ruleIdx={ruleIdx}
+          setLimitRules={setLimitRules}
+          condition={condition}
+          value={value}
+        />
+      );
     default:
       return 'matcher';
   }

@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { setKeyValueForRule } from '../utils';
 
-export const useTextInput = () => {
-  const [text, setValue] = useState('');
+export const useTextInput = (initState) => {
+  const [text, setValue] = useState(initState);
 
   const handleTextChange = (e, ruleIdx, setLimitRules) => {
     const { value } = e.target;

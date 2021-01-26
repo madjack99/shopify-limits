@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 import RulesList from '../rulesList';
+import Spinner from '../spinner';
 import { apiFetchLimits } from '../../api';
-import { defaultLimit, limitRuleTitles } from '../materials';
+import { defaultLimit } from '../materials';
 
 import './style.css';
 
@@ -15,7 +16,14 @@ const RootComponent = () => {
 
     apiFetchLimits()
       .then((response) => {
-        console.log(response);
+        /**
+         * get response and then
+         * set new limit rules using setLimitRules eg:
+         *
+         * setLimitRules([
+         *  { entity: 'sku', condition: 'ends_with', value: 'some value' }
+         * ])
+         */
       })
       .finally(() => setIsLoading(false));
   }, []);
@@ -43,14 +51,22 @@ const RootComponent = () => {
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae incidunt
         voluptas
       </div>
-      <button onClick={handleAddLimit} className='add_limit_btn'>
+      <button
+        disabled={isLoading}
+        onClick={handleAddLimit}
+        className='add_limit_btn'
+      >
         Add limit
       </button>
-      {isLoading && <div>Loading</div>}
+      {isLoading && <Spinner />}
       {limitRules.length ? (
         <div className='rules_list'>
           <div className='button_group'>
-            <button onClick={handleSaveLimit} className='button'>
+            <button
+              disabled={isLoading}
+              onClick={handleSaveLimit}
+              className='button'
+            >
               Save
             </button>
             <button className='button'>Set Alert Text</button>
