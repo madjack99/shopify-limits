@@ -13,10 +13,10 @@
 .add_limit_btn {
   align-self: center;
   margin-bottom: 10px;
+  padding: 10px 15px;
   background-color: lightblue;
   border-radius: 5px;
   border: 1px solid black;
-  outline: none;
 }
 
 .rules_list {
@@ -24,4 +24,23 @@
   border: 1px solid black;
   border-radius: 5px;
   background-color: white;
+}
+
+.button_group {
+  padding-bottom: 15px;
+}
+
+.button {
+  padding: 10px;
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.button:hover {
+  background-color: lightblue;
+}
+
+.button_delete {
+  background-color: red;
 }
