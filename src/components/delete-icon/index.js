@@ -2,6 +2,8 @@ import React from 'react';
 
 import { ReactComponent as TrashImage } from '../../icons/trash.svg';
 
+import './style.css';
+
 const DeleteIcon = ({ ruleIdx, setLimitRules }) => {
   const handleRuleDelete = () => {
     setLimitRules((rules) => {
@@ -12,8 +14,8 @@ const DeleteIcon = ({ ruleIdx, setLimitRules }) => {
   };
 
   return (
-    <div onClick={handleRuleDelete}>
-      <TrashImage width={15} />
+    <div onClick={handleRuleDelete} className='delete_icon'>
+      <TrashImage width={20} />
     </div>
   );
 };

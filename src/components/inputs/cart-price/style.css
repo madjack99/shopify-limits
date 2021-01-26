@@ -1,0 +1,13 @@
+.quantity_matcher {
+  width: 84px;
+  margin-right: 15px;
+}
+
+.conditions_section {
+  display: flex;
+  flex-grow: 1;
+}
+
+.text_input {
+  flex-grow: 1;
+}

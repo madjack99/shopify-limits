@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { apiFetchLimits } from '../../api';
+
 import RulesList from '../rulesList';
+import { apiFetchLimits } from '../../api';
 import { defaultLimit } from '../materials';
+
+import './style.css';
 
 const RootComponent = () => {
   const [limitRules, setLimitRules] = useState([]);
@@ -22,11 +25,18 @@ const RootComponent = () => {
   }, []);
 
   return (
-    <div>
-      <div>Header text</div>
-      <button onClick={handleAddLimit}>Add limit</button>
+    <div className='main_wrapper'>
+      <div className='header'>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae incidunt
+        voluptas
+      </div>
+      <button onClick={handleAddLimit} className='add_limit_btn'>
+        Add limit
+      </button>
       {isLoading && <div>Loading</div>}
-      <RulesList limitRules={limitRules} setLimitRules={setLimitRules} />
+      <div className='rules_list'>
+        <RulesList limitRules={limitRules} setLimitRules={setLimitRules} />
+      </div>
     </div>
   );
 };

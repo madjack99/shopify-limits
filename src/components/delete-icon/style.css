@@ -1,0 +1,8 @@
+.delete_icon {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.delete_icon:hover {
+  transform: scale(1.1);
+}

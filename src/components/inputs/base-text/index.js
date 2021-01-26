@@ -4,6 +4,9 @@ import { stringMatchers } from '../../materials';
 import { renderSelectOptions, setKeyValueForRule } from '../../utils';
 import { useTextInput } from '../../hooks/useTextInput';
 
+import '../../shared-styles/inputs.css';
+import './style.css';
+
 const BaseTextInput = ({ ruleIdx, setLimitRules }) => {
   const [text, handleTextChange] = useTextInput();
 
@@ -26,14 +29,18 @@ const BaseTextInput = ({ ruleIdx, setLimitRules }) => {
   };
 
   return (
-    <div>
-      <select onChange={handleSelect}>
+    <div className='conditions_section'>
+      <select
+        onChange={handleSelect}
+        className='default_select_input string_matcher'
+      >
         {renderSelectOptions(stringMatchers)}
       </select>
       <input
         type='text'
         value={text}
         onChange={(e) => handleTextChange(e, ruleIdx, setLimitRules)}
+        className='default_text_number_input text_input'
       />
     </div>
   );

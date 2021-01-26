@@ -14,7 +14,7 @@ class ProductInput extends Component {
         ],
         complete: true,
       });
-    }, 5000);
+    }, 500);
   }
 
   onChange(product) {

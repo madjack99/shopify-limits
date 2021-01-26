@@ -1,0 +1,27 @@
+.main_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: 10px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.add_limit_btn {
+  align-self: center;
+  margin-bottom: 10px;
+  background-color: lightblue;
+  border-radius: 5px;
+  border: 1px solid black;
+  outline: none;
+}
+
+.rules_list {
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+}

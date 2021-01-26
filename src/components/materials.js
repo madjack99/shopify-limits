@@ -1,5 +1,5 @@
 export const defaultLimit = {
-  entity: 'items_in_cart',
+  entity: 'has_one_of_products',
   condition: null,
   value: [],
 };
